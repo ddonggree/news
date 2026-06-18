@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함께 사는 세상 - 인종차별은 안 돼요!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Nanum Gothic', 'sans-serif'],
+                        cute: ['Gaegu', 'cursive'],
+                    },
+                    colors: {
+                        brandBlue: '#00A3FF',
+                        brandYellow: '#FFD600',
+                        brandGreen: '#4ADE80',
+                        brandPink: '#FB7185',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Nanum Gothic', sans-serif; background-color: #F0F9FF; }
+        .font-cute { font-family: 'Gaegu', cursive; }
+        .card { background: white; border-radius: 24px; box-shadow: 0 8px 0px #E0F2FE; border: 3px solid #BAE6FD; }
+        .btn-ox { transition: all 0.2s; border-bottom: 6px solid rgba(0,0,0,0.1); }
+        .btn-ox:active { transform: translateY(4px); border-bottom-width: 2px; }
+        .quiz-option.active-o { background-color: #4ADE80 !important; color: white; }
+        .quiz-option.active-x { background-color: #FB7185 !important; color: white; }
+        /* 퀴즈 결과 이미지용 스타일 */
+        #quiz-result-card { background: #fff; width: 500px; padding: 40px; border: 10px solid #FFD600; border-radius: 40px; text-align: center; position: fixed; left: -9999px; }
+    </style>
+</head>
+<body class="text-slate-800 pb-20">
+
+    <!-- 헤더 영역 -->
+    <nav class="bg-white border-b-4 border-sky-100 px-6 py-4 sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="text-3xl">🤝</span>
+                <h1 class="text-xl font-extrabold text-sky-600">모두가 소중한 우리 교실</h1>
+            </div>
+            <div class="hidden md:flex gap-4 font-bold text-sky-500">
+                <span>#인권수업</span>
+                <span>#함께살아요</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 pt-10 space-y-12">
+        
+        <!-- 도입 섹션 -->
+        <header class="text-center space-y-4">
+            <div class="inline-block bg-yellow-200 px-4 py-1 rounded-full text-yellow-700 font-bold text-sm mb-2">오늘의 사회 공부</div>
+            <h2 class="text-4xl md:text-5xl font-extrabold font-cute text-slate-900 leading-tight">
+                "정당한 인종차별은 없어요!" <br> 
+                <span class="text-sky-500">마음의 눈으로 진실 찾기</span>
+            </h2>
+            <p class="text-lg text-slate-500 font-medium">
+                우리 마음속에 숨어있는 편견을 찾아내고, <br class="hidden md:block">
+                모두가 행복하게 지내는 방법을 알아봐요.
+            </p>
+        </header>
+
+        <!-- 1. 우리 뇌의 비밀 (부정성 편향) -->
+        <section class="card p-8 space-y-6">
+            <div class="flex items-center gap-3">
+                <span class="bg-pink-100 p-3 rounded-2xl text-2xl">🧠</span>
+                <h3 class="text-2xl font-bold">1. 우리 뇌는 왜 무서운 소문을 더 잘 믿을까요?</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4">
+                    <div class="bg-pink-50 p-5 rounded-2xl border-2 border-pink-100">
+                        <h4 class="font-bold text-pink-600 mb-2">🤔 '부정성 편향'이 뭐예요?</h4>
+                        <p class="text-sm leading-relaxed text-slate-600">
+                            아주 옛날, 우리 조상님들은 무서운 호랑이 소식을 빨리 알아야 살아남을 수 있었어요. 그래서 우리 뇌는 <span class="bg-pink-200 px-1 font-bold">좋은 소식보다 나쁘고 무서운 소식</span>에 더 깜짝 놀라고 오래 기억하게 되었답니다.
+                        </p>
+                    </div>
+                    <p class="text-sm font-medium text-slate-500 italic">
+                        "나쁜 소문을 들으면 우리 마음은 금방 불안해져요. 선동하는 사람들은 이 점을 이용해서 거짓말을 하기도 해요!"
+                    </p>
+                </div>
+                <div class="bg-sky-50 rounded-3xl p-6 text-center border-2 border-sky-100">
+                    <img src="https://img.icons8.com/bubbles/200/brain.png" alt="뇌 아이콘" class="mx-auto w-32 h-32">
+                    <p class="font-cute text-2xl text-sky-600 mt-2">"무서운 건 빨리 기억해야 해!"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 역사의 아픈 이야기 -->
+        <section class="card p-8 space-y-6 border-amber-200 shadow-[#FEF3C7]">
+            <div class="flex items-center gap-3">
+                <span class="bg-amber-100 p-3 rounded-2xl text-2xl">📜</span>
+                <h3 class="text-2xl font-bold">2. 소문 때문에 일어난 슬픈 역사</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white border-2 border-slate-100 p-5 rounded-2xl shadow-sm">
+                    <h4 class="font-bold text-red-500 mb-2">🇩🇪 독일의 이야기</h4>
+                    <p class="text-sm text-slate-600">옛날 독일에서 경제가 어려워지자, "유대인 때문에 살기 힘들다"는 가짜 소문이 퍼졌어요. 사람들은 이 말을 믿고 많은 유대인을 괴롭히는 큰 잘못을 저질렀어요.</p>
+                </div>
+                <div class="bg-white border-2 border-slate-100 p-5 rounded-2xl shadow-sm">
+                    <h4 class="font-bold text-orange-500 mb-2">🇯🇵 일본의 이야기</h4>
+                    <p class="text-sm text-slate-600">100년 전 일본에 큰 지진이 났을 때, "조선인이 우물에 독을 탔다"는 거짓말이 퍼졌어요. 불안해진 사람들이 이 소문을 믿고 죄 없는 우리 조상님들을 괴롭혔답니다.</p>
+                </div>
+            </div>
+            <p class="bg-amber-50 p-4 rounded-xl text-center text-sm font-bold text-amber-700">
+                💡 공포와 불안은 사람들의 눈을 가려요. 그래서 우리는 사실을 꼭 확인해야 해요!
+            </p>
+        </section>
+
+        <!-- 3. 진짜 통계 확인하기 -->
+        <section class="card p-8 space-y-6 border-emerald-200 shadow-[#D1FAE5]">
+            <div class="flex items-center gap-3">
+                <span class="bg-emerald-100 p-3 rounded-2xl text-2xl">📊</span>
+                <h3 class="text-2xl font-bold">3. 소문 vs 진짜 뉴스 (팩트체크)</h3>
+            </div>
+            <p class="text-slate-600 text-sm">요즘 "중국인들이 범죄를 많이 저지른다"는 말을 믿는 사람이 많아요. 하지만 진짜 숫자는 어떨까요?</p>
+            
+            <div class="space-y-6 pt-4">
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-bold">
+                        <span>한국 사람의 범죄율</span>
+                        <span class="text-slate-400">2.36%</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-6 rounded-full overflow-hidden">
+                        <div class="bg-slate-400 h-full w-[100%]"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm font-bold">
+                        <span class="text-emerald-600">중국 사람의 범죄율 (국내 체류)</span>
+                        <span class="text-emerald-600 font-extrabold">1.65% (더 낮아요!)</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-6 rounded-full overflow-hidden">
+                        <div class="bg-emerald-500 h-full w-[70%]"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-sm text-emerald-700 font-bold bg-emerald-50 py-3 rounded-xl">
+                ✔ 사실은 중국인의 범죄율이 한국인보다 더 낮아요! 소문만 믿고 미워하면 안 되겠죠?
+            </p>
+        </section>
+
+        <!-- 4. OX 퀴즈 섹션 -->
+        <section id="quiz-section" class="card p-8 border-indigo-200 shadow-[#E0E7FF] bg-indigo-50/30">
+            <div class="text-center mb-8">
+                <h3 class="text-3xl font-cute font-bold text-indigo-600 mb-2">✏️ 함께 풀어보는 OX 퀴즈</h3>
+                <p class="text-slate-500">오늘 배운 내용을 얼마나 잘 기억하고 있나요?</p>
+            </div>
+
+            <div id="quiz-container" class="space-y-10">
+                <!-- 퀴즈 문항들이 여기에 들어갑니다 -->
+            </div>
+
+            <div id="quiz-footer" class="mt-12 text-center hidden">
+                <div class="bg-white p-6 rounded-3xl border-4 border-indigo-200 mb-6">
+                    <p class="text-2xl font-cute font-bold text-indigo-600">참 잘했어요! 당신은 <span id="final-score" class="text-4xl text-pink-500">0</span>점을 받았어요!</p>
+                </div>
+                <button onclick="downloadQuizResult()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-2xl font-bold shadow-lg flex items-center gap-2 mx-auto transition-transform active:scale-95">
+                    <i class="fa-solid fa-download"></i> 결과 이미지로 저장하기
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 이미지 다운로드용 숨겨진 카드 -->
+    <div id="quiz-result-card">
+        <h1 style="font-family: 'Gaegu'; font-size: 50px; color: #00A3FF; margin-bottom: 10px;">상 장</h1>
+        <p style="font-size: 24px; color: #64748b;">다문화 인권 퀴즈 왕</p>
+        <div style="margin: 40px 0; border-top: 2px dashed #ccc; border-bottom: 2px dashed #ccc; padding: 20px;">
+            <p style="font-size: 30px; font-weight: bold;">점수: <span id="img-score" style="color: #FB7185;">100</span>점</p>
+            <p style="font-size: 18px; margin-top: 10px; color: #475569;">위 어린이는 인종차별이 없는 행복한 세상을 <br> 만들기 위해 열심히 공부하였으므로 이 상을 줍니다.</p>
+        </div>
+        <p style="font-size: 16px; color: #94a3b8;">오늘의 날짜: <span id="img-date">2023.06.18</span></p>
+        <p style="font-size: 20px; font-weight: bold; margin-top: 20px;">인권 사랑 초등학교</p>
+    </div>
+
+    <footer class="text-center py-10 text-slate-400 text-sm">
+        <p>© 2023 즐거운 사회 시간 - 정당한 인종차별은 없다</p>
+    </footer>
+
+    <script>
+        const quizData = [
+            {
+                q: "사람의 뇌는 살아남기 위해 무서운 소식을 더 잘 기억하는 성질이 있다.",
+                a: "O",
+                comment: "맞아요! 이것을 '부정성 편향'이라고 해요. 나쁜 일을 경계하려고 우리 뇌가 그렇게 진화했답니다."
+            },
+            {
+                q: "옛날 독일에서는 '가짜 소문' 때문에 유대인들이 큰 피해를 입었다.",
+                a: "O",
+                comment: "정답이에요. 경제가 어려운 것을 특정 사람들 탓으로 돌리는 나쁜 소문 때문에 비극이 일어났어요."
+            },
+            {
+                q: "관동대지진 때 조선인들이 우물에 독을 탔다는 소문은 사실이었다.",
+                a: "X",
+                comment: "틀렸어요! 그건 사람들을 불안하게 만들어서 우리 조상님들을 공격하게 만든 '거짓말'이었어요."
+            },
+            {
+                q: "한국에 사는 중국인들의 범죄율은 한국 사람보다 훨씬 높다.",
+                a: "X",
+                comment: "아니에요! 실제 통계를 보면 중국인의 범죄율은 1.65%로 내국인(2.36%)보다 더 낮답니다."
+            },
+            {
+                q: "우리는 소문만 믿고 특정 나라 사람들을 미워하기보다 '진짜 사실'을 확인해야 한다.",
+                a: "O",
+                comment: "참 잘했어요! 인종차별 없는 세상을 위해 가장 중요한 마음가짐이에요."
+            }
+        ];
+
+        let userAnswers = new Array(quizData.length).fill(null);
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = quizData.map((item, index) => `
+                <div class="space-y-4">
+                    <div class="flex gap-4">
+                        <span class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shrink-0">${index + 1}</span>
+                        <p class="text-lg font-bold">${item.q}</p>
+                    </div>
+                    <div class="flex gap-4 pl-12">
+                        <button onclick="checkAnswer(${index}, 'O')" id="btn-${index}-O" class="quiz-option btn-ox bg-white border-2 border-emerald-400 text-emerald-500 px-8 py-3 rounded-2xl font-black text-2xl flex-1 hover:bg-emerald-50">O</button>
+                        <button onclick="checkAnswer(${index}, 'X')" id="btn-${index}-X" class="quiz-option btn-ox bg-white border-2 border-pink-400 text-pink-500 px-8 py-3 rounded-2xl font-black text-2xl flex-1 hover:bg-pink-50">X</button>
+                    </div>
+                    <div id="comment-${index}" class="hidden pl-12">
+                        <div class="bg-white p-4 rounded-2xl border-2 border-dashed border-slate-200">
+                            <p class="text-sm font-bold" id="result-text-${index}"></p>
+                            <p class="text-xs text-slate-500 mt-1">${item.comment}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function checkAnswer(index, choice) {
+            if (userAnswers[index] !== null) return; // 이미 푼 문제는 패스
+
+            userAnswers[index] = choice;
+            const correct = quizData[index].a;
+            const isCorrect = choice === correct;
+
+            // 버튼 스타일 변경
+            const btnO = document.getElementById(`btn-${index}-O`);
+            const btnX = document.getElementById(`btn-${index}-X`);
+            
+            if (choice === 'O') btnO.classList.add('active-o');
+            else btnX.classList.add('active-x');
+
+            // 해설 보여주기
+            const commentBox = document.getElementById(`comment-${index}`);
+            const resultText = document.getElementById(`result-text-${index}`);
+            
+            commentBox.classList.remove('hidden');
+            if (isCorrect) {
+                resultText.innerHTML = "✅ 정답이에요!";
+                resultText.className = "text-sm font-bold text-emerald-600";
+            } else {
+                resultText.innerHTML = `❌ 아쉬워요! 정답은 '${correct}'예요.`;
+                resultText.className = "text-sm font-bold text-pink-600";
+            }
+
+            checkAllCleared();
+        }
+
+        function checkAllCleared() {
+            if (userAnswers.every(ans => ans !== null)) {
+                let score = 0;
+                userAnswers.forEach((ans, i) => {
+                    if (ans === quizData[i].a) score += 20;
+                });
+                
+                document.getElementById('quiz-footer').classList.remove('hidden');
+                document.getElementById('final-score').innerText = score;
+                document.getElementById('img-score').innerText = score;
+                
+                // 날짜 설정
+                const now = new Date();
+                document.getElementById('img-date').innerText = `${now.getFullYear()}.${now.getMonth()+1}.${now.getDate()}`;
+            }
+        }
+
+        async function downloadQuizResult() {
+            const card = document.getElementById('quiz-result-card');
+            // 캡처를 위해 잠시 위치 조정
+            card.style.position = 'static';
+            card.style.left = '0';
+            
+            const canvas = await html2canvas(card);
+            const link = document.createElement('a');
+            link.download = '인권_공부_상장.png';
+            link.href = canvas.toDataURL();
+            link.click();
+            
+            // 다시 숨기기
+            card.style.position = 'fixed';
+            card.style.left = '-9999px';
+        }
+
+        renderQuiz();
+    </script>
+</body>
+</html>
